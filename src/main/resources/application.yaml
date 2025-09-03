@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:cmabdullah23/ConfigRepo.git
+          uri: https://github.com/cmabdullah23/ConfigRepo.git
           default-label: main
         health:
           enabled: true

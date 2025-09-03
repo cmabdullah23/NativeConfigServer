@@ -38,6 +38,9 @@ dependencies {
     }
     implementation('org.springframework.cloud:spring-cloud-config-server') {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: 'org.apache.sshd', module: 'sshd-core'
+        exclude group: 'org.apache.sshd', module: 'sshd-git'
+        exclude group: 'org.apache.sshd', module: 'sshd-sftp'
     }
     implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client') {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
@@ -66,7 +69,6 @@ graalvmNative {
             buildArgs.add('--initialize-at-build-time=org.bouncycastle')
             buildArgs.add('--initialize-at-build-time=org.slf4j.LoggerFactory')
             buildArgs.add('--initialize-at-build-time=org.slf4j.helpers.Reporter')
-            buildArgs.add('--initialize-at-build-time=org.apache.sshd')
         }
     }
 }
