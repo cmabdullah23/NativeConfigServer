@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Native Config Server
+  profiles:
+    active: native
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+        health:
+          enabled: true
+    refresh:
+      enabled: false            # disable refresh scope for AOT
+
+server:
+  port: 8098
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
