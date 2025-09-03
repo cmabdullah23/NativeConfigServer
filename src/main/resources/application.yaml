@@ -1,14 +1,13 @@
 spring:
   application:
     name: Native Config Server
-  profiles:
-    active: native
 
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
+        git:
+          uri: git@github.com:cmabdullah23/ConfigRepo.git
+          default-label: main
         health:
           enabled: true
     refresh:
